@@ -4,6 +4,9 @@
 
 <head>
     <meta charset="utf-8" />
+    <title>Freewall</title>
+
+    <link rel="shortcut icon" href="favicon-sticky-note.ico" type="image/x-icon" />
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 
@@ -24,7 +27,7 @@
 
 </head>
 
-<body onload="init()">
+<body>
     <div id="userlist">
     </div>
     <div id="firepad">
@@ -34,14 +37,23 @@
         function init() {
             //// Initialize Firebase.
             //// TODO: replace with your Firebase project configuration.
+            /*
             var config = {
                 databaseURL: 'https://sandnox-firepad.firebaseio.com'
             };
             firebase.initializeApp(config);
+            */
 
             //// Get Firebase Database reference.
-            var firepadRef = getExampleRef();
+            //  var firepadRef = new Firebase('https://sandnox-firepad.firebaseio.com');
 
+
+            firebase.initializeApp({
+                apiKey: 'AIzaSyCDHaSdo-G1vvMWD6pzdmdWlPCdmdmMwAA',
+                databaseURL: 'https://sandnox-firepad.firebaseio.com'
+            });
+
+            var firepadRef = firebase.database().ref();
             //// Create CodeMirror (with lineWrapping on).
             var codeMirror = CodeMirror(document.getElementById('firepad'), {
                 lineWrapping: true,
@@ -68,8 +80,10 @@
                 }
             });
         }
+        init();
 
         // Helper to get hash from end of URL or generate a random one.
+        /*
         function getExampleRef() {
             var ref = firebase.database().ref();
             var hash = window.location.hash.replace(/#/g, '');
@@ -84,6 +98,7 @@
             }
             return ref;
         }
+        */
     </script>
 </body>
 
