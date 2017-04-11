@@ -4,7 +4,7 @@
     "description": "",
     "main": "firepad.js",
     "scripts": {
-        "start": "forever app.js"
+        "start": "forever start app.js"
 
     },
     "author": "",
