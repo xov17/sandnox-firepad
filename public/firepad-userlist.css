@@ -9,6 +9,13 @@
     /* Height / width / positioning can be customized for your use case.
        For demo purposes, we make the user list 175px and firepad fill the rest of the page. */
     
+    @font-face {
+        font-family: 'Menlo Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Menlo Regular'), url('Menlo-Regular.woff') format('woff');
+    }
+    
     #userlist {
         position: absolute;
         left: 0;
@@ -28,6 +35,11 @@
         bottom: 0;
         right: 0;
         height: auto;
+    }
+    
+    .CodeMirror {
+        font-family: "Menlo Regular";
+        font-size: 0.7em;
     }
     
     .firepad-userlist {
